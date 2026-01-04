@@ -1,0 +1,5 @@
+{
+  "name": "Argus - MCP Debugger",
+  "description": "A high-fidelity landing page for Argus, an observability and debugging tool for Model Context Protocol (MCP) agents, featuring interactive mockups and modern dark-mode aesthetics.",
+  "requestFramePermissions": []
+}
