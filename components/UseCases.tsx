@@ -1,33 +1,58 @@
-
 import React from 'react';
-import { BugReport, MonitorHeart, FactCheck, School } from './Icons';
+import {BugReport, FactCheck, MonitorHeart, School} from './Icons';
+import ItemCard from './ItemCard';
 
 const UseCases: React.FC = () => {
-  const cases = [
-    { icon: <BugReport />, title: "Debug Integrations", desc: "Fix broken tool arguments and connection errors during development." },
-    { icon: <MonitorHeart />, title: "Monitor Production", desc: "Keep an eye on active agents and alert on high failure rates." },
-    { icon: <FactCheck />, title: "Audit Tool Usage", desc: "Verify exactly what data your agents are accessing and changing." },
-    { icon: <School />, title: "Learn Behavior", desc: "Understand the hidden reasoning steps agents take to solve problems." }
-  ];
+	const cases = [
+		{
+			icon: <BugReport />,
+			title: 'Debug Integrations',
+			desc: 'Fix broken tool arguments and connection errors during development.',
+			color: 'text-accent bg-accent/10 border-accent/20'
+		},
+		{
+			icon: <MonitorHeart />,
+			title: 'Monitor Production',
+			desc: 'Track failure rates and latency across live agent runs.',
+			color: 'text-primary bg-primary/10 border-primary/20'
+		},
+		{
+			icon: <FactCheck />,
+			title: 'Audit Tool Usage',
+			desc: 'Verify exactly what data your agents are accessing and changing.',
+			color: 'text-blue-400 bg-blue-400/10 border-blue-400/20'
+		},
+		{
+			icon: <School />,
+			title: 'Learn Behavior',
+			desc: 'Understand the hidden reasoning steps agents take to solve problems.',
+			color: 'text-secondary bg-secondary/10 border-secondary/20'
+		}
+	];
 
-  return (
-    <section className="py-24 bg-[#08090e]">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-white mb-12 text-center">Use Cases</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {cases.map((c, i) => (
-            <div key={i} className="bg-surface border border-white/5 p-8 rounded-3xl hover:bg-white/5 transition-all duration-300 hover:-translate-y-1">
-              <div className="h-12 w-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 mb-6 border border-blue-500/20">
-                {c.icon}
-              </div>
-              <h3 className="font-bold text-white mb-3 text-lg">{c.title}</h3>
-              <p className="text-sm text-gray-400 leading-relaxed font-light">{c.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+	return (
+		<section className='py-24 bg-[#08090e]'>
+			<div className='mx-auto max-w-7xl text-center px-6 lg:px-8'>
+				<span className='text-primary text-sm font-bold uppercase tracking-widest mb-2 block'>
+					Use Cases
+				</span>
+				<h2 className='text-3xl font-bold text-white mb-12 text-center'>
+					Built for real agent systems
+				</h2>
+				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+					{cases.map((c, i) => (
+						<ItemCard
+							key={i}
+							icon={c.icon}
+							title={c.title}
+							desc={c.desc}
+							color={c.color}
+						/>
+					))}
+				</div>
+			</div>
+		</section>
+	);
 };
 
 export default UseCases;

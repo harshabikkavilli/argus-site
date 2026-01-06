@@ -1,8 +1,16 @@
 {
 	"name": "argus-site",
-	"private": true,
-	"version": "0.0.0",
+	"author": "Harsha Bikkavilli",
+	"version": "0.1.0",
 	"type": "module",
+	"keywords": [
+		"mcp",
+		"model-context-protocol",
+		"debugging",
+		"monitoring",
+		"proxy",
+		"argus"
+	],
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
