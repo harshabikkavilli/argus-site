@@ -1,0 +1,47 @@
+import {Callout} from '../../../components/docs/MDXComponents';
+
+## System Requirements
+
+Before installing Argus, make sure your system meets these requirements:
+
+- **Node.js**: Version 18.0.0 or higher
+- **npm**: Version 8.0.0 or higher (comes with Node.js)
+- **Operating System**: macOS, Linux, or Windows
+
+<Callout type='info' title='Node.js Version'>
+	Argus requires Node.js 18+ for native fetch support and modern JavaScript
+	features.
+</Callout>
+
+## Installation Methods
+
+### Global Installation (Recommended)
+
+Install Argus globally to use it from any directory:
+
+```bash
+npm install -g @argusai/cli
+```
+
+### Local Installation
+
+For project-specific usage, install as a dev dependency:
+
+```bash
+npm install --save-dev @argusai/cli
+```
+
+Then run via npx:
+
+```bash
+npx argus dashboard
+```
+
+## Verify Installation
+
+Check that Argus is installed correctly:
+
+```bash
+argus --version
+argus --help
+```

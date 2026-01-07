@@ -1,0 +1,52 @@
+## General Questions
+
+### What is Argus?
+
+Argus is a local-first observability tool for debugging MCP (Model Context Protocol) servers. It captures, inspects, and replays every tool call made by your AI agents.
+
+### Is Argus free?
+
+Yes, Argus is free and open source under the MIT license.
+
+### Does Argus work offline?
+
+Yes! Argus is completely local-first. All data is stored on your machine in a SQLite database.
+
+## Technical Questions
+
+### What Node.js version is required?
+
+Node.js 18.0.0 or higher is required.
+
+### Where is data stored?
+
+By default, data is stored at `~/.argus/argus.db`. You can customize this with the `--db` flag.
+
+### Does Argus modify my MCP server?
+
+No, Argus acts as a transparent proxy. Your MCP server code is not modified.
+
+### Can I use Argus with any MCP server?
+
+Yes, Argus works with any MCP-compliant server.
+
+## Privacy & Security
+
+### Is my data sent anywhere?
+
+No, all data stays local on your machine. Argus does not phone home or send telemetry.
+
+### What about sensitive data?
+
+Argus automatically redacts common sensitive fields (tokens, passwords, API keys). You can configure additional fields to redact.
+
+## Integration Questions
+
+### Does Argus work with Claude Desktop?
+
+Yes! Use `argus setup --claude` to generate the configuration.
+
+### Can I use multiple MCP servers?
+
+Yes, wrap each server separately and they'll all appear in the dashboard.
+

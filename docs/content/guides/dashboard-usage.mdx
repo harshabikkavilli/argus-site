@@ -1,0 +1,46 @@
+## Starting the Dashboard
+
+Launch the Argus dashboard with:
+
+```bash
+argus dashboard --open
+```
+
+The `--open` flag automatically opens your browser to `http://localhost:3000`.
+
+## Dashboard Overview
+
+The dashboard provides several key views:
+
+### Timeline View
+
+See all tool calls in chronological order with:
+- Tool name and server
+- Execution duration
+- Status (success/error)
+- Timestamp
+
+### Call Inspector
+
+Click any call to see:
+- Full request parameters
+- Complete response data
+- Error details and stack traces
+- Timing breakdown
+
+### Filtering
+
+Filter calls by:
+- Server name
+- Tool name
+- Status (success/error)
+- Time range
+
+## Real-time Updates
+
+When using `--api` with the wrap command, the dashboard updates in real-time via Server-Sent Events (SSE).
+
+```bash
+argus wrap --api http://localhost:3000 -- your-mcp-server
+```
+

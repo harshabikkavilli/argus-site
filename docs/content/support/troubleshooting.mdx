@@ -1,0 +1,54 @@
+import { Callout } from '../../../components/docs/MDXComponents';
+
+## Common Issues
+
+### Claude Desktop Shows "Server disconnected"
+
+<Callout type="warning" title="Solution">
+Test the wrap command manually first to ensure the MCP server works.
+</Callout>
+
+1. Test manually:
+```bash
+argus wrap -- npx -y @modelcontextprotocol/server-filesystem /tmp
+```
+
+2. Check Claude Desktop logs:
+   - macOS: `~/Library/Logs/Claude/`
+   - Windows: `%APPDATA%\Claude\logs\`
+
+### Dashboard Not Showing Updates
+
+If the dashboard isn't updating in real-time:
+
+1. Ensure the dashboard is running: `argus dashboard`
+2. Use `--api http://localhost:3000` with wrap command
+3. Verify both are using the same database path
+
+### Port Already in Use
+
+If port 3000 is taken:
+
+```bash
+argus dashboard --port 4000
+argus wrap --api http://localhost:4000 -- your-server
+```
+
+### Permission Errors
+
+If you get permission errors during global install:
+
+```bash
+npm install -g @argusai/cli --unsafe-perm
+```
+
+Or use a Node version manager like nvm.
+
+## Getting Help
+
+If you're still stuck:
+
+1. Run `argus diagnose` for diagnostic info
+2. Check the [FAQs](/docs/faqs)
+3. Join our [Community](/docs/community)
+

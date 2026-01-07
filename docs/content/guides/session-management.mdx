@@ -1,0 +1,44 @@
+## Understanding Runs
+
+Argus automatically groups tool calls into **runs**. A new run is created when:
+
+- A proxy connection is established
+- The idle timeout is exceeded (default: 60 seconds)
+
+## Configuring Idle Timeout
+
+Set a custom idle timeout with the `--idle-timeout` flag:
+
+```bash
+argus wrap --idle-timeout 120 -- your-mcp-server
+```
+
+Or in your config file:
+
+```json
+{
+  "idleTimeout": 120
+}
+```
+
+## Filtering by Run
+
+In the dashboard, use the run selector to:
+- View calls from a specific run
+- Compare behavior across runs
+- Focus on recent debugging sessions
+
+## Run Statistics
+
+Each run shows:
+- Total number of calls
+- Success/error breakdown
+- Time span
+- Servers involved
+
+## Best Practices
+
+- Use shorter timeouts for active debugging
+- Use longer timeouts for monitoring
+- Name your servers clearly for easy identification
+

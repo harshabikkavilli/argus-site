@@ -1,0 +1,68 @@
+## Overview
+
+Argus provides several CLI commands for different use cases.
+
+## argus dashboard
+
+Start the monitoring dashboard.
+
+```bash
+argus dashboard [options]
+```
+
+| Flag | Description | Default |
+|------|-------------|---------|
+| `-p, --port` | Dashboard port | 3000 |
+| `-o, --open` | Open browser automatically | false |
+| `-d, --db` | Database path | ~/.argus/argus.db |
+
+## argus wrap
+
+Wrap an MCP server to record tool calls.
+
+```bash
+argus wrap [options] -- <command>
+```
+
+| Flag | Description | Default |
+|------|-------------|---------|
+| `-a, --api` | Dashboard URL for real-time updates | - |
+| `-n, --name` | Server display name | command |
+| `-d, --db` | Database path | ~/.argus/argus.db |
+| `-t, --idle-timeout` | Seconds before new run | 60 |
+| `--redact` | Additional keys to redact | - |
+| `--no-redact` | Disable redaction | - |
+
+## argus setup
+
+Generate configuration files.
+
+```bash
+argus setup [options]
+```
+
+| Flag | Description |
+|------|-------------|
+| `--init` | Create argus.config.json |
+| `--claude` | Generate Claude Desktop config |
+
+## argus stats
+
+View recording statistics.
+
+```bash
+argus stats [options]
+```
+
+| Flag | Description |
+|------|-------------|
+| `--run <id>` | Stats for specific run |
+
+## argus diagnose
+
+Print diagnostic information for troubleshooting.
+
+```bash
+argus diagnose
+```
+

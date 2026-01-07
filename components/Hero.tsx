@@ -21,15 +21,42 @@ const Hero: React.FC = () => {
 						with confidence.
 					</h1>
 
-					<p className='mx-auto max-w-2xl text-xl text-gray-400 mb-12 font-light leading-relaxed'>
+					<p className='mx-auto max-w-2xl text-xl text-gray-400 mb-8 font-light leading-relaxed'>
 						Argus captures, inspects, and replays every MCP tool call so you can
 						see what your agents actually did. Stop guessing and start fixing.
 					</p>
 
+					<div className='flex items-center justify-center gap-3 mb-12'>
+						<a
+							href='https://www.npmjs.com/package/@argusai/cli'
+							target='_blank'
+							rel='noopener noreferrer'>
+							<img
+								src='https://img.shields.io/npm/v/@argusai/cli?color=CC3534&label=npm&logo=npm'
+								alt='npm version'
+								className='h-6'
+							/>
+						</a>
+						<a
+							href='https://www.npmjs.com/package/@argusai/cli'
+							target='_blank'
+							rel='noopener noreferrer'>
+							<img
+								src='https://img.shields.io/npm/dt/@argusai/cli?color=CC3534&label=downloads&logo=npm'
+								alt='npm downloads'
+								className='h-6'
+							/>
+						</a>
+					</div>
+
 					<div className='flex flex-col sm:flex-row items-center justify-center gap-6'>
-						<button className='h-14 w-full sm:w-auto px-10 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-bold text-lg transition-all hover:scale-105 shadow-[0_0_30px_-5px_rgba(217,70,239,0.5)] hover:shadow-[0_0_40px_-5px_rgba(217,70,239,0.7)] border border-white/20'>
+						<a
+							href='https://www.npmjs.com/package/@argusai/cli'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='h-14 w-full sm:w-auto px-10 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-bold text-lg transition-all hover:scale-105 shadow-[0_0_30px_-5px_rgba(217,70,239,0.5)] hover:shadow-[0_0_40px_-5px_rgba(217,70,239,0.7)] border border-white/20 inline-flex items-center justify-center'>
 							Get Started Locally
-						</button>
+						</a>
 						<button className='h-14 w-full sm:w-auto px-10 rounded-full border border-white/10 hover:border-white/30 text-white font-medium text-lg transition-all flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 backdrop-blur-sm hover:scale-105'>
 							<PlayCircle className='w-6 h-6' />
 							Watch Demo

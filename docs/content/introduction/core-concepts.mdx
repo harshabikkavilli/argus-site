@@ -1,0 +1,35 @@
+## What is MCP?
+
+The **Model Context Protocol (MCP)** is a standardized protocol that allows LLM applications to interact with external tools and services. It defines how tools are discovered, invoked, and how results are returned.
+
+## How Argus Works
+
+Argus operates as a **transparent proxy** between your MCP client and server:
+
+1. Your LLM client connects to Argus instead of the MCP server directly
+2. Argus forwards requests to the actual MCP server
+3. All requests and responses are captured and stored
+4. The dashboard displays calls in real-time
+
+## Key Components
+
+### Proxy (Wrap)
+
+The `argus wrap` command creates a proxy wrapper around any MCP server. This allows Argus to intercept and record all communication.
+
+### Dashboard
+
+The web-based dashboard provides real-time monitoring, filtering, and debugging capabilities.
+
+### Runs
+
+Tool calls are automatically grouped into **runs** based on connection sessions and idle timeouts. This helps organize debugging sessions.
+
+### Replay
+
+Any recorded tool call can be replayed to compare current behavior against the original execution.
+
+## Data Storage
+
+Argus uses SQLite for local storage. By default, the database is stored at `~/.argus/argus.db`.
+

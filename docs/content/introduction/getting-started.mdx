@@ -1,0 +1,55 @@
+import {Callout} from '../../../components/docs/MDXComponents';
+
+## Overview
+
+Argus is a local-first observability tool designed specifically for the Model Context Protocol (MCP). It acts as a transparent proxy between your LLM client (like Claude Desktop) and your MCP servers, capturing every tool execution, error, and latency metric.
+
+<Callout type='info' title='Prerequisites'>
+	Before installing Argus, ensure you have `Node.js >= 18.0.0` and `npm`
+	installed on your machine.
+</Callout>
+
+## Installation
+
+Argus is distributed as a global npm package. You can install it with a single command:
+
+```bash
+# Install globally
+npm install -g @argusai/cli
+
+# Verify installation
+argus --version
+```
+
+## Quick Start
+
+Getting started with Argus takes just two commands:
+
+### 1. Start the Dashboard
+
+Open a terminal and start the Argus dashboard:
+
+```bash
+argus dashboard --open
+```
+
+This will start the monitoring dashboard on `http://localhost:3000` and automatically open it in your browser.
+
+### 2. Wrap Your MCP Server
+
+In another terminal, wrap any MCP server to start recording:
+
+```bash
+argus wrap --api http://localhost:3000 -- npx -y @modelcontextprotocol/server-filesystem /tmp
+```
+
+That's it! Make tool calls from your LLM client and watch them appear in real-time.
+
+## Dashboard Preview
+
+The Argus dashboard provides a comprehensive view of all your MCP tool calls:
+
+- **Timeline View**: See every tool call with timestamps and duration
+- **Request/Response Inspector**: Examine full payloads with syntax highlighting
+- **Error Tracking**: Quickly identify and debug failed calls
+- **Replay Functionality**: Re-run any tool call without involving the LLM

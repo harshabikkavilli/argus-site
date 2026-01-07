@@ -1,0 +1,73 @@
+## Configuration File
+
+Create `argus.config.json` in your project root for advanced configuration.
+
+## Generate Config
+
+```bash
+argus setup --init
+```
+
+## Full Example
+
+```json
+{
+  "database": "~/.argus/argus.db",
+  "port": 3000,
+  "idleTimeout": 60,
+  "redaction": {
+    "enabled": true,
+    "keys": ["token", "secret", "password", "api_key"]
+  },
+  "servers": {
+    "github": {
+      "name": "GitHub",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "filesystem": {
+      "name": "Filesystem",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/tmp"]
+    }
+  }
+}
+```
+
+## Options
+
+### database
+
+Path to the SQLite database file.
+
+### port
+
+Port for the dashboard server.
+
+### idleTimeout
+
+Seconds of inactivity before starting a new run.
+
+### redaction
+
+Configure automatic redaction of sensitive data.
+
+#### redaction.enabled
+
+Enable or disable redaction.
+
+#### redaction.keys
+
+Array of field names to redact.
+
+### servers
+
+Define MCP server configurations for easy launching.
+
+## Environment Variables
+
+Use `${VAR_NAME}` syntax to reference environment variables in your config.
+

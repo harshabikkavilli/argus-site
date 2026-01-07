@@ -1,0 +1,36 @@
+## What is Replay?
+
+Replay allows you to re-execute any recorded tool call **without involving the LLM**. This is useful for:
+
+- Testing if a bug has been fixed
+- Comparing behavior over time
+- Debugging intermittent issues
+
+## How to Replay
+
+1. Open a tool call in the dashboard
+2. Click the **Replay** button
+3. View the side-by-side comparison
+
+## Diff View
+
+The replay feature shows a visual diff between:
+- **Original**: The recorded response from the first execution
+- **Replayed**: The new response from re-execution
+
+Differences are highlighted to quickly spot changes.
+
+## Use Cases
+
+### Verifying Fixes
+
+After fixing a bug in your MCP server, replay the failing call to confirm it now works.
+
+### Testing Consistency
+
+Replay calls to verify your tools return consistent results.
+
+### Debugging State Issues
+
+Compare results to identify if external state (database, files) affects behavior.
+

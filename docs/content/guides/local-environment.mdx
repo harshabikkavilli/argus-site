@@ -1,0 +1,53 @@
+## Development Setup
+
+For local development, we recommend running Argus in a dedicated terminal.
+
+## Quick Setup
+
+### Terminal 1: Dashboard
+
+```bash
+argus dashboard --open
+```
+
+### Terminal 2: Wrapped Server
+
+```bash
+argus wrap --api http://localhost:3000 -- your-mcp-server
+```
+
+## Using with Claude Desktop
+
+Generate Claude Desktop configuration:
+
+```bash
+argus setup --claude
+```
+
+Copy the output to your `claude_desktop_config.json` file.
+
+## Custom Database Location
+
+Specify a project-specific database:
+
+```bash
+argus dashboard --db ./my-project.db
+argus wrap --db ./my-project.db -- your-mcp-server
+```
+
+## Environment Variables
+
+Set up environment variables for your MCP servers in the config file:
+
+```json
+{
+  "servers": {
+    "github": {
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      }
+    }
+  }
+}
+```
+
